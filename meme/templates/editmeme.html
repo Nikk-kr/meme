@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Meme</title>
+  </head>
+  <body>
+    <form action="/details/" method="POST">
+      {% csrf_token %}
+      <input type="text" name="id" value="{{ meme_id }}" readonly />
+      <input
+        type="text"
+        name="text0"
+        placeholder="First Text"
+        autocomplete="off"
+      />
+      <input
+        type="text"
+        name="text1"
+        placeholder="Second Text"
+        autocomplete="off"
+      />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
